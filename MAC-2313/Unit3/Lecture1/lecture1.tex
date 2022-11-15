@@ -1,0 +1,73 @@
+\section{Lecture 1}
+\subsection{Double Integrals Intro}
+
+\begin{definition}{Double Integrals}{def311}
+    The double summation of multivariable integrals is defined as:
+    \begin{gather*}
+        \sum_{i=1}^{\infty}\sum_{i=1}^{\infty}\Delta x\Delta y f(x_i,y_i) 
+        =
+        \iint_R f(x,y) DA
+    \end{gather*}
+    Where R is the independent x and y ranges or $\Delta x$ and $\Delta y$ and A is the area defined by those ranges.
+    R does not have to be rectangular and can be defined by the area of functions.
+\end{definition}
+
+Double Integrals can be easily defined as twice iterated integrals.
+
+\begin{lenma}{Simple dA definition under the x and y coordinate system}{lem311}
+    \begin{gather*}
+        dA = dxdy \quad \text{OR} \quad dA = dydx
+    \end{gather*}
+\end{lenma}
+
+\begin{definition}{Volume of a box with height c}{def312}
+    \begin{gather*}
+        \iint_R c DA = c\iint_r DA = cA(R)
+    \end{gather*}
+\end{definition}
+
+\begin{theorem}{Fubini's Theorem}{the311}
+    Let $a \le x \le b$ and $g_1(x) \le y \le g_2(x)$ \\
+    Let $c \le x \le d$ and $h_1(y) \le x \le h_2(y)$ \\
+    Then for a continuous function $f(x,y)$ or R
+    \begin{align*}
+        \iint_R f(x,y) dA \qpand{=} \int_a^b\left[\int_{g_1(x)}^{g_2(x)} f(x,y)dy\right]dx \\
+        \qpand{=} \int_c^d\left[\int_{h_1(y)}^{h_2(y)} f(x,y)dy\right]dx
+    \end{align*}
+    Alike partial derivatives, we can compare this to a partial integral.
+\end{theorem}
+
+\begin{example}{Example with figure given}{exam311}
+    \begin{figure}[H]
+        \def\svgwidth{\columnwidth}
+        \import{Unit3/Lecture1/}{drawing1.pdf_tex}
+        % \incfig{Unit3/Lecture1/example.pdf}
+    \end{figure}
+    \begin{align}
+        \iint_R f(x,y) dA \qpand{=} \int_0^1\left[\int_{x^2}^{x} f(x,y)dy\right]dx \\
+        \qpand{=} \int_0^1\left[\int_{y}^{\sqrt{y}} f(x,y)dy\right]dx
+    \end{align}
+\end{example}
+
+\begin{definition}{Average Area}{def313}
+    \begin{align*}
+        \text{Average Area } = \frac{1}{A(R)}\iint_{R} f(x,y)\,dA
+    \end{align*}
+\end{definition}
+
+\subsection{Polar Coordinates}
+\begin{definitionside}{Polar Coordinates}{def314}
+    \begin{figure}[H]
+        \def\svgwidth{\columnwidth}
+        \import{Unit3/Lecture1/}{drawing2test.pdf_tex}
+    \end{figure}
+    \tcblower
+    \begin{align*}
+        x = r\cos\theta \quad & \quad x^2+y^2=r^2 \\
+        y = r\sin\theta \quad & \quad \frac{y}x = \tan\theta
+    \end{align*}
+\end{definitionside}
+
+
+
+% \includepdf[width=100pt]{Unit3/Lecture1/example.pdf}Unit3/Lecture1/example
