@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sample="C:/Users/markw/Documents/LaTeX-Lecture-Notes/commands/drawing"
+dr=$1
+
+cp "$sample.pdf" "$dr.pdf"
+cp "$sample.pdf_tex" "$dr.pdf_tex"
+inkscape "$dr.pdf"

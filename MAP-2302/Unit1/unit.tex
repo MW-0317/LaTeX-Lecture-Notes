@@ -1,0 +1,87 @@
+\section{Lecture 1: What are differential equations?}
+
+Remember that differential equations are equations defined by equations with derivatives. One of the simplest examples, with variables x and y, are:
+\begin{align*}
+    dy=dx
+\end{align*}
+Where the initial function, through integration can be found as:
+\begin{align*}
+    y=x
+\end{align*}
+
+The differential equation learned from Calc 1 is the one that describes a population, where:
+\begin{align*}
+    \frac{dP}{dt}=kP
+\end{align*}
+Where the derivative, or rate of change, is dependent on the \emph{current population}.
+
+\section{Lecture 2}
+\begin{example}{Excplicit Solution}{}
+    Now let's look at an explicit solution. \par
+    Verify that $\phi = 3\sin 2x + e^{-x}$ is a solution of $y'' + 4y = 5e^{-x}$.
+    \begin{align*}
+        \phi ' = 6\sin {2x} - e^{-x} \\
+        \phi '' = -12\sin {2x} + e^{-x} 
+    \end{align*}
+    Now we plug in
+    \begin{gather*}
+        -12\sin {2x} + e^{-x} + 12\sin 2x + 4e^{-x} = 5e^{-x} \\
+        5e^{-x} = 5e^{-x} \checkmark
+    \end{gather*}
+\end{example}
+
+\begin{theorem}{Existence and Uniqueness}{}
+    If $f(x,y)$ and $\frac{\partial f}{\partial y}(x,y)$ are continuous about the point $(x_0, y_0)$ then the Initial Value Problem $y' = f(x,y)$ and $y(x_0) = y_0$ has a unique solution in a neighborhood of the point $(x_0,y_0)$.
+\end{theorem}
+
+\begin{example}{}{}
+    $y' = xy^{\frac 12} = f(x,y)$. \par
+    Clearly $f(x,y)$ is continuous about $(0,0)$ but $\frac{\partial f}{\partial y} = \frac{x}{2y^{\frac 12}}$ is not continuous at $(0,0)$. So the theorem cannot say that there is a unique solution. \par
+    Lets say $y_1 = 0$ for every $x$:
+    \begin{align*}
+        y_1' = 0 \quad & \quad xy^{\frac 12} = 0 
+    \end{align*}
+    \begin{gather*}
+        y' = xy^{\frac 12} \checkmark
+    \end{gather*}
+    Lets now try $y_2 = \frac{x^4}{16}$
+    \begin{align*}
+        y_2' = \frac{x^3}{4} & xy^{\frac 12} = x(\frac{x^4}{16})^{\frac 12} = \frac{x^3}{4}
+    \end{align*}
+    \begin{gather*}
+        y' = xy^{\frac 12} \checkmark
+    \end{gather*}
+\end{example}
+
+\section{Lecture 3}
+Let's say $y'=f(x,y)$. Try to get an idea of how the solution curves. Now, remember the interpretation of $y'$: is it the slope the tangent line. Now let's plot plenty of small tangent lines along some graph for an equation of f(x,y).
+
+% TODO: Implement graph that does above.
+
+This is defined as a \textbf{Direction Field}.
+
+\begin{definition}{Direction Field}{}
+    A field of vectors or slopes that represent a function at any given set of points.
+\end{definition}
+
+\begin{example}{$y'=x^2=f(x,y)$}{}
+    
+\end{example}
+
+\begin{example}{$y'=\frac xy$}{}
+
+\end{example}
+
+\begin{definition}{Isoclines}{}
+    \textbf{Isoclines} are curves of \emph{equal} slope. Isoclines do not intersect unless $f(x,y)$ is not defined at the point. Isoclines are used to develop vector fields or directional fields.
+\end{definition}
+
+We can use isoclines to create a direction field. To do so we set the derivative or $y'$ to m and solve for $y$.
+
+\begin{example}{$y'=\frac xy=m$ ; $y=\frac 1m x$}{}
+    
+\end{example}
+
+\begin{example}{$y'=-\frac xy=m$ ; $y=-\frac 1m x$}{}
+    
+\end{example}
