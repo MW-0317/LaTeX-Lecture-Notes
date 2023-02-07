@@ -38,6 +38,12 @@
 \usepackage{transparent}
 \usepackage{float}
 
+% \setcounter{chapter}{-1}
+\renewcommand{\chaptername}{Unit}
+\makeatletter
+\renewcommand{\@chapapp}{Unit}
+\makeatother
+
 \newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
 \SetCommentSty{mycommfont}
 \newcommand{\incfig}[1]{%
