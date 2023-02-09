@@ -1,0 +1,26 @@
+\section{Big-Oh}
+\subsection{The formal definition of Big-Oh}
+
+Big-Oh is the way in which Computer Scientists mathematically question the running times of our programs. It allows a general understanding how an algorithm will work with large, to infinitely large datasets or inputs.
+\begin{definition}{Big-Oh, Big-$\Omega$ and Big-$\Theta$}{}
+    Let $c, N$ represent constants where $c$ is some constant towards the functions, $c_1 > 0$, and $N$ be where $cg(n)$ meets or exceeds $f(n)$.
+    \par
+    \textbf{\emph{Big-Oh}}:
+    \begin{equation*}
+        f(n) = O(g(n)) \text{ iff } f(n) \le c_1g(n) \text{ for } n \ge N_0
+    \end{equation*}
+    \textbf{\emph{Big-$\Omega$}}:
+    \begin{equation*}
+        f(n) = \Omega(g(n)) \text{ iff } f(n) \ge c_1g(n) \text{ for } n \ge N_0
+    \end{equation*}
+    \textbf{\emph{Big-$\Theta$}}:
+    \begin{equation*}
+        f(n) = \Theta(g(n)) \text{ iff: }   \begin{cases}
+                                                f(n) = O(g(n)) \\
+                                                \wedge \\
+                                                f(n) = \Omega(g(n))
+                                            \end{cases}
+    \end{equation*}
+\end{definition}
+
+Big-Oh is used to find an \textbf{upper bound} of a function. Big-$\Omega$ is used to find a \textbf{lower bound} of a function.
