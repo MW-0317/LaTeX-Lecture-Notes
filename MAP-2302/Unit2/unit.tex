@@ -3,3 +3,90 @@
 \begin{example}{Gravity}{}
     
 \end{example}
+
+\section{Separable Equation}
+
+\begin{definition}{Separable Equations}{}
+    A differential equation is separable if $y'=f(x,y)=g(x)p(y)$
+\end{definition}
+
+\begin{example}{Is $y'=e^{x+y}$ a separable equation?}{}
+    We find that $y'=f(x,y)=(e^x)(e^y)$ where $g(x)=e^x$ and $p(y)=e^y$. Therefor it is a separable equation.
+\end{example}
+
+\begin{definition}{Separable Equations and Integrals}{}
+    \begin{gather}
+        \frac{dy}{dx}=f(x,y)=g(x)p(y) \\
+        \frac 1{p(y)} \frac{dy}{dx} = g(x)
+    \end{gather}
+    Let $h(y(x))=p^{-1}(y(x))$
+    \begin{gather}
+        h(y(x))\frac{dy}{dx}=g(x)
+    \end{gather}
+    Let $H(y(x)), G(x)$ be antiderivatives of $h(y(x)), g(x)$, respectively.
+    \begin{gather}
+        \frac{dH}{dy}\frac{dy}{dx}=\frac{dG}{dx} \\
+        \frac{dH}{dx}=\frac{dG}{dx}
+    \end{gather}
+\end{definition}
+
+\section{Linear Equations}
+
+\begin{definition}{Linear Equation Definition}{}
+    Let's first define linear functions as below
+    \begin{gather*}
+        a_1(x)\frac{dy}{dx} + a_2(x)y = b(x)
+    \end{gather*}
+    or
+    \begin{align*}
+        \frac{dy}{dx} + p(x)y = q(x) && \text{ where } p(x) = \frac{a_2(x)}{a_1(x)} \quad q(x) = \frac{b(x)}{a_1(x)}
+    \end{align*}
+\end{definition}
+
+\subsection{How do we solve linear equations?}
+
+Take from the definition above and multiply my $\mu(x)$.
+\begin{gather*}
+    \mu(x)\frac{dy}{dx} + \mu(x) p(x)y = \mu(x) q(x)
+\end{gather*}
+Assume that $\frac{d\mu}{dx}=\mu(x)p(x)$. Which we can find by doing:
+
+\begin{align*}
+    \frac{1}{\mu(x)}\frac{d\mu}{dx} &= p(x)dx \\
+    \frac{d}{dx}\left[ \ln (\mu(x)) \right] &= p(x) \\
+    ln(\mu(x)) &= \int{p(x) dx} \\ 
+    \mu(x) &= e^{\int{p(x) dx}}
+\end{align*}
+However, now with $\mu(x)$ the function can be simplified to a much easier to understand form.
+
+\begin{align*}
+    \mu(x)\frac{dy}{dx} + \frac{d\mu}{dx}y &= \mu(x)q(x) \\
+    \frac{d}{dx}\left[ \mu(x)y \right] &= \mu(x)q(x) \\
+    y &= \frac1{\mu(x)} \int{\mu(x)q(x)}dx
+\end{align*}
+With both equations combined:
+
+\begin{gather*}
+    y = \frac1{e^{\int{p(x) dx}}} \int{e^{\int{p(x) dx}}q(x)}dx
+\end{gather*}
+
+\section{Exact Equations}
+
+Let $F(x, y(x)) = 0$ be an implicit solution of a differential equation. Find $\frac{dy}{dx} = f$
+
+\begin{gather*}
+    \frac{d}{dx}\left[ F(x,y(x)) \right] = \frac{\partial F}{\partial y} + \frac{\partial F}{\partial y} \frac{dy}{dx} = 0 \\
+    \frac{dy}{dx} = m -\frac{F_x}{F_y}
+\end{gather*}
+
+\begin{definition}{}{}
+    $\frac{dy}{dx}$ is said to be exact if there exists an $F(x,y(x))$ such that $f=-\frac{F_x}{F_y}$
+\end{definition}
+
+\begin{example}{}{}
+    $\frac{dy}{dx} = \frac{2xy}{1 + y}$, is it exact?
+\end{example}
+
+\begin{theorem}{}{}
+    Let $f=-\frac MN$ or $\frac{dy}{dx} = -\frac MN$. $Ndy = -Mdx$ or $Mdx + Ndy=0$. $\frac{dy}{dx} = f$ is exact iff $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$
+\end{theorem}
