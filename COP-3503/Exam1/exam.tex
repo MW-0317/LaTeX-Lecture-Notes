@@ -1,7 +1,7 @@
-\section{Big-Oh}
+\section{Runtime and Runtime Analysis}
 \subsection{The formal definition of Big-Oh}
 
-Big-Oh is the way in which Computer Scientists mathematically question the running times of our programs. It allows a general understanding how an algorithm will work with large, to infinitely large datasets or inputs.
+Big-Oh is the way in which Computer Scientists mathematically question the running times of our programs. It allows a general understanding how an algorithm will work with large, or infinitely large datasets or inputs.
 \begin{definition}{Big-Oh, Big-$\Omega$ and Big-$\Theta$}{}
     Let $c, N$ represent constants where $c$ is some constant towards the functions, $c_1 > 0$, and $N$ be where $cg(n)$ meets or exceeds $f(n)$.
     \par
@@ -24,3 +24,37 @@ Big-Oh is the way in which Computer Scientists mathematically question the runni
 \end{definition}
 
 Big-Oh is used to find an \textbf{upper bound} of a function. Big-$\Omega$ is used to find a \textbf{lower bound} of a function.
+
+\section{Hash Table}
+
+\section{Hash Containers Review}
+\subsection{HashSet and HashMap}
+
+Both HashSet and HashMap are used to store items in a set or array such that they are accessible in constant time, however because of the issues that could arise from hashing, this isn't always possible. The two defined above, in their simplist methods have an upper bound of $O(n)$ and a lower bound of $\Omega(n)$.
+\par
+\textbf{HashSet}: a HashSet is a set that implements the uses of hashing and hash codes. Alike a set, the functions are add(), remove(), contains(), and size().
+
+\textbf{HashMap}: a HashMap is very similar however it houses key value pairs where the key is what is used as a hashcode and the value is what is stored. Both can be searched and queried with containsKey(), containsValue(). This class however changes their priorty functions of retrieval and inputting to get() and put(), however size() remains.
+
+\section{Trees}
+\subsection{AVL Trees Review}
+\subsection{2-4 Trees}
+\textbf{Insertion}:
+The basic premise of 2-4 Trees is that each node has either no children or between two and four, hence the name 2-4 trees. In 2-4 tree algorithms numbers are continuously inserted into a node with a array with a maximum of four elements. When that number rises above three, we split the node into two separate arrays at some split point. This splitting action is defined as "splitting" or "SQUISHING UP." The split point or squish up point is somewhat arbitrary and almost any number can be selected, however it is wise to use a number that would most evenly split the array, preferably at point two or three. For the scope of this class, that split point will be at point three.\par
+When this squish up action occurs and there exists a head node, we must push this splitted node upwards into the head node. \par
+\textbf{Deletion}:
+When a node is deleted that is \emph{not} a leaf node, we must take the largest value on the left subtree or smallest value on the right subtree and replace it with the number that was deleted. \par
+When a leaf node is deleted, we must take from a sibling that has more than one value and push it upwards so that the connected value from the parent is drop down to the missing leaf node. However, if no sibling has more than one node then we must fuse with that sibling and push the connected parent value down to create a node with an array of two values.
+
+\subsection{Treaps}
+\begin{definition}{Heaps}{}
+    Heaps are data structures defined as a tree, however it has a structural property that forces to fill the tree in order of the minimum height. Heaps are also in sorted order.
+\end{definition}
+Treaps are the combination of the data structures trees and heaps. It stores data like a tree, in logmarithmic time, however how that data is configured is based on a heap. Every time a node is inserted, it is given a random unique priority. If this priority doesn't fit the heap, then the node is rotated until it fits.
+\begin{note}
+    Treaps do not follow the structural property that heaps have.
+\end{note}
+\textbf{Insertion}:
+When values are inserted into the tree, they are given a random, unique, priority. Insertion is the same as BST
+\par
+\textbf{Deletion}:
