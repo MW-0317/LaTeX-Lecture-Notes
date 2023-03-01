@@ -1,9 +1,10 @@
-\section{Lecture 1: What are differential equations?}
+\section{What are differential equations?}
 
 Remember that differential equations are equations defined by equations with derivatives. One of the simplest examples, with variables x and y, are:
 \begin{align*}
     dy=dx
 \end{align*}
+
 Where the initial function, through integration can be found as:
 \begin{align*}
     y=x
@@ -13,7 +14,27 @@ The differential equation learned from Calc 1 is the one that describes a popula
 \begin{align*}
     \frac{dP}{dt}=kP
 \end{align*}
-Where the derivative, or rate of change, is dependent on the \emph{current population}.
+
+Where the derivative, or rate of change, is dependent on the \emph{current population}. We can also take how a bank might offer an interest rate, consider below an interest rate of $3\%$.
+\begin{align*}
+    \frac{dy}{dx}=0.03y
+\end{align*}
+A solution to this equation is $y(t)=e^{0.03t}$ which we can prove by inputing $y(t)$ and it's derivative: $y'(t)=0.03e^{0.03t}$
+\begin{align*}
+    0.03e^{0.03t} = 0.03e^{0.03t} \checkmark
+\end{align*}
+With this solution we can also find that, for any real value of $C$, the solution still proves correct ($y(t)=Ce^{0.03t}$, $y'(t)=C(0.03)e^{0.03t}$).
+\begin{align*}
+    C(0.03)e^{0.03t}=Ce^{0.03t} \checkmark
+\end{align*}
+Which means that there are \emph{infinitly} many solutions, which we will find true for many differential equations.
+
+Thus we must ask
+\begin{enumerate}
+    \item When do we have solutions?
+    \item If we do, how many?
+    \item And how do we find these solutions for any given differential equation?
+\end{enumerate}
 
 \section{Lecture 2}
 \begin{example}{Excplicit Solution}{}
