@@ -36,6 +36,136 @@ Thus we must ask
     \item And how do we find these solutions for any given differential equation?
 \end{enumerate}
 
+\subsection{Key Definitions}
+
+We define ODE's as follows:
+\begin{definition}{Orinary Differential Equations}{}
+    \begin{align*}
+        y^{(n)} = f(t, y, y', y'', ..., y^{(n-1)})
+    \end{align*}
+    The \textbf{\emph{order}} is the highest derivative of the function.
+\end{definition}
+
+Well then we ask how do we solve for these ODE's?
+
+\begin{example}{}{}
+    Lets first look at a simple example: $y''-4y'+3y=0$. We can actually solve this with $y_1(t) = e^t$ or $y_2(t) = C_1e^t$. Or even $y_3(t) = C_1e^{3t}$. A \textbf{\emph{general solution}}, a solution that contains all possible solutions, would be $y(t)=C_1e^t + C_2e^{3t}$. But then where did these two equations derive from? 
+\end{example}
+
+\begin{definition}{}{}
+    A solution to an ODE is defined as:
+    \begin{align*}
+        \phi^{(n)} = f(t, \phi, \phi', \phi'', ..., \phi^{(n-1)})
+    \end{align*}
+\end{definition}
+
+Once we find the solution to the ODE, it can then be found the \emph{exact} equation using initial conditions where the initial conditions are defined as follows:
+\begin{definition}{}{}
+    \begin{align*}
+        y(0) = y_0, y'(0) = y_0', ..., y^{(n-1)}(0) = y_0^{(n-1)}
+    \end{align*}
+    This will then solve for the \textbf{\emph{Initial Value Problem}}.
+\end{definition}
+
+\section{Separation of Variables}
+
+Lets take the \textbf{Exponential Growth} equation: $\frac{dy}{dt} = ky$. This equation can model many real world ideas like population growth, virus spread, compound interest, etc. It's a very powerful equation. The solution is as follows: $y=C_1e^{kt}$. We can find this solution by separating the variables.
+\begin{align*}
+    \frac{dy}{dt} & = ky \\
+    \frac{1}{y} \frac{dy}{dt} & = k \\
+    \int \frac{1}{y} \frac{dy}{dt} dt & = \int k dt \\
+    \int \frac{1}{y} dy & = \int k dt \\
+    ln|y| & = kt + C \\
+    y & = e^{kt + C} = e^{C}e^{kt} = C_1e^{kt} \\
+\end{align*}
+
+Generically we solve through separation of variables by:
+\begin{align*}
+    \frac{dy}{dt} & = g(y)f(t) \\
+    \frac{1}{g(y)} \frac{dy}{dt} & = f(t) \\ 
+    \int \frac{1}{g(y)} \frac{dy}{dt} dt & = \int f(t) dt \\
+    \int \frac{1}{g(y)} dy & = \int f(t) dt
+\end{align*}
+Sometimes these solutions can be implicit and cannot be solved for $y$ or $x$.
+
+\subsection{Newton's Law of Cooling}
+We can model cooling or heating of an object in a room with the following:
+\begin{align*}
+    \frac{dT}{dt} = -k (T-A)
+\end{align*}
+Where $T$ is the temperature of the object, $A$ is the ambient temperature or the temperature of the room, and $k$ is some constant. \par
+We can solve for T through the separation of variables.
+\begin{align*}
+    \frac{dT}{dt} & = -k (T-A) \\
+    \frac{1}{T-A} & = -k \\
+    \int \frac{1}{T-A} dT & = \int -k dt \\
+    ln|T-A| & = -kt + C \\
+    T - A & = e^{-kt + C} \\
+    T & = C_1e^{-kt} + A
+\end{align*}
+
+\section{Geometric Meaning \\ \normalsize \normalfont \emph{Slope Fields, Integral Curves, and Isoclines}}
+
+Slope fields are graphs of small slopes plotted to help visualize a differential equation. We can either plot them directly or use \textbf{\emph{Isoclines}} to graph the DE. We can find these Isoclines by finding when the slope equals some integer (usually from -2 to 2) and plotting the curves with their integer slopes.
+\textbf{\emph{Integral Curves}} are then the \emph{solutions} that follow the lines in the slope field.
+
+\section{Existance and Uniqueness}
+Given an Initial Value Problem: $y' = f(x,y), y(x_0) = y_0$
+\begin{enumerate}
+    \item Does a solution \emph{exist}?
+    \item Is that solution \emph{unique}?
+\end{enumerate}
+
+\begin{theorem}{}{}
+    If $f$ and $\frac{df}{dy}$ are continuous near $(x_0, y_0)$, then there is a unique solution on an interval $\alpha < x_0 < \beta$ to the I.V.P.
+    \begin{align*}
+        y' = f(x,y), y(x_0) = y_0
+    \end{align*}
+    If $f$ is continuous then it guarantees existance only.
+\end{theorem}
+
+\section{Linear Differential Equations}
+A linear differential equation is a ordinary differential equation where $y, y'', y''',...$ are all linear with respect to $y$. Or if it follows: 
+\begin{align*}
+    a_n(x)y^{(n)} + a_{n-1}y^{(n-1)} + ... a_0(x)y = b(x)
+\end{align*}
+A Linear ODE is Homogeneous if $b(x) = 0$.
+\par
+Let's take a first order linear differential equation like the following $y' + p(x)y = f(x)$. How might we solve this equation? Let's first multiply a third function, $r(x)$ on both sides of the equation and we get:
+\begin{align*}
+    r(x)y' = r(x)p(x)y = r(x)f(x)
+\end{align*}
+Is it then possible to force the left hand side to be the derivative of some function of $x$ multiplied by $y$? The left hand side \emph{seems} to be comparable to the product rule. Let's see if this follows:
+\begin{align*}
+    \frac{d}{dx}[r(x)y] = r(x)y' + r'(x)y
+\end{align*}
+Now we see some similarities, the only differences actually are that of the functional coefficients of $y$. Well let's see what happens when we set them equal to each other.
+\begin{align*}
+    r'(x) = r(x)p(x)
+\end{align*}
+Now we can solve this as a separable equation.
+\begin{align*}
+    \frac{1}{r(x)} \frac{dr}{dx} & = p(x) \\
+    \int \frac{1}{r(x)} dr & = \int p(x) dx \\
+    ln|r(x)| & = \int p(x) dx \\
+    r(x) & = e^{\int p(x) dx}
+\end{align*}
+Now that we know that an $r(x)$ exists we can use it in our differential equation
+\begin{align*}
+    \frac{d}{dx}[r(x)y] = r(x)f(x)
+\end{align*}
+Then lastly integrating $dx$ we find that 
+\begin{align*}
+    y & = \frac{1}{r(x)}\int r(x) f(x) dx \\
+    r(x) & = e^{\int p(x) dx}
+\end{align*}
+
+\begin{theorem}{Existance and Uniqueness for Linear}{}
+    If $f(x)$ and $p(x)$ are continuous on $(a,b)$ then a solution exists and is unique on $(a,b)$.
+\end{theorem}
+
+\textbf{Note that everything after here is based on my prof's teachings and not the lecture videos.}
+
 \section{Lecture 2}
 \begin{example}{Excplicit Solution}{}
     Now let's look at an explicit solution. \par
